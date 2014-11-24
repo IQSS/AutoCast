@@ -1,9 +1,9 @@
 Package: AutoCast
-Version: 0.1-10
-Date: 2009-06-20
+Version: 0.2
+Date: 2014-09-01
 Title: Automated Bayesian Forecasting with YourCast
-Author: Jon Bischof <jbischof@fas.harvard.edu>
-Maintainer: Gary King <king@harvard.edu>
+Author: Konstantin Kashin <kkashin@fas.harvard.edu>, Jon Bischof <jbischof@fas.harvard.edu>
+Maintainer: Konstantin Kashin <kkashin@fas.harvard.edu>
 Depends: R (>= 1.9.0), YourCast, rgenoud
 Description: Generates Yourcasts under range of prior specifications, ranking forecasts by user preferences for smoothness and out-of-sample fit.
 License: GPL >=2
