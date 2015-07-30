@@ -1,0 +1,136 @@
+?yourcast
+library(YourCast)
+?yourcast
+input <- matrix(data=round(25, runif(0,100)), nrow=5, ncol=5)
+input <- matrix(data=round(runif(25, 0,100)), nrow=5, ncol=5)
+input
+apply(input, MARGIN=1, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+})
+}, simplify=F)
+apply(input, MARGIN=1, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+}, simplify=F)
+apply(input, MARGIN=1, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+}, simplify=F)
+?apply
+lapply(input, function(row){
+lapply(input, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+}, simplify=F)
+lapply(input, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+}, simplify=F)
+}
+)
+lapply(input, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+}, simplify=F)
+lapply(input, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+})
+})
+t(apply(input, MARGIN=1, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+})
+}))
+t(apply(input, MARGIN=1, function(row){#
+	return(c(min(row), mean(row), max(row)))#
+}))
+output <- t(apply(input, MARGIN=1, function(row){#
+	return(c(min=min(row), mean=mean(row), max=max(row)))#
+}))
+output
+output < - as.data.frame(output)
+output
+apply(input, MARGIN=1, function(row){#
+	return(list(min=min(row), mean=mean(row), max=max(row)))#
+})
+test <- apply(input, MARGIN=1, function(row){#
+	return(list(min=min(row), mean=mean(row), max=max(row)))#
+})
+do.call(rbind, test)
+class(do.call(rbind, test))
+output2 <- apply(input, MARGIN=1, function(row){#
+	return(list(min=min(row), mean=mean(row), max=max(row)))#
+})#
+#
+# in this case, we need to rbind everything into a matrix#
+do.call(rbind, output2)
+?yourcast
+install.packages("roxygen2")
+library(roxygenize2)
+library(roxygen2)
+?roxygenise
+getwd()
+roxygenise("/Users/Kostya/Desktop/Dropbox/sandbox/AutoCast")
+?scale
+?center
+?scale
+?scale
+?apply
+roxygenise("/Users/Kostya/Desktop/Dropbox/sandbox/AutoCast")
+load("/Users/Kostya/Downloads/CSES25_20_1_591.RData")
+ls()
+str(scoresMtx)
+melt(scoresMtx)
+df <- melt(scoresMtx)
+df <- melt(scoresMtx)
+colnames(df) <- c("row","col","group")
+colnames(df) <- c("row","col","score")
+ggplot(melted_mat, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column")
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column")
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_fill_continuous(low="white", high="#132B43")
+nrow(v)
+nrow(scoresMtx)
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row", limits=c(1,591)) + scale_y_continuous("Column") + scale_fill_continuous(low="white", high="#132B43")
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_fill_continuous(low="white", high="#132B43") + coord_cartesian(xlim=c(0,591),ylim=c(0,591))
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_fill_continuous(low="white", high="#132B43") + coord_cartesian(xlim=c(1,nrow(scoresMtx)),ylim=c(1,ncol(scoresMtx)))
+sum(df[df<0])
+sum(df<0)
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_fill_continuous(low="white", high="#132B43") + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+sum(scoresMtx<0)
+sum(scoresMtx==0)
+sum(scoresMtx>0)
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_colour_gradient2(low = muted("red"), mid = "white", high = muted("blue")) + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_colour_gradient2(low = muted("red"), mid = "white", high = muted("blue"))
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_fill_gradient2(low = muted("red"), mid = "white", high = muted("blue"), midpoint=0)
+scoresMtx[scoresMtx<0]
+min(scoresMtx[scoresMtx<0])
+max(scoresMtx)
+df.not0 <- melt(scoresMtx!=0)
+colnames(df) <- c("row","col","score")
+colnames(df.not0) <- c("row","col","score")
+ggplot(df.not0, aes(x=row, y=col, fill=as.factor(score))) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") +  + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+head(df.not0)
+ggplot(df.not0, aes(x=row, y=col, fill=as.factor(score))) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+class(mat)
+ggplot(df.not0, aes(x=col, y=row, fill=as.factor(score))) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+ggplot(df.not0, aes(x=col, y=row, fill=as.factor(score))) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_reverse("Row") + scale_y_continuous("Column") + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+maxCol(scoresMtx\)
+maxCol(scoresMtx)
+max.col(scoresMtx)
+max.rowol(scoresMtx)
+max.row(scoresMtx)
+melt(scoresMtx[0:5,])
+df <- melt(scoresMtx)
+colnames(df) <- c("row","col","score")
+df.not0 <- melt(scoresMtx!=0)
+colnames(df.not0) <- c("row","col","score")
+ggplot(df.not0, aes(x=col, y=row, fill=as.factor(score))) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+ggplot(df, aes(x=row, y=col, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Row") + scale_y_continuous("Column") + scale_fill_gradient2(low = "red", mid = "white", high = "#132B43", midpoint=0) + coord_cartesian(xlim=c(0,nrow(scoresMtx)),ylim=c(0,ncol(scoresMtx)))
+ggplot(df, aes(x=col, y=row, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + scale_fill_gradient2(low = "red", mid = "white", high = "#132B43", midpoint=0) + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx)))
+ggplot(df, aes(x=col, y=row, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + scale_fill_gradient2(low = "red", mid = "white", high = "#132B43", midpoint=0) + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=1, intercept=0)
+ggplot(df, aes(x=col, y=row, fill=score)) + geom_tile() + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + scale_fill_gradient2(low = "red", mid = "white", high = "#132B43", midpoint=0) + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=1, intercept=0, color="black", linetype="solid")
+ggplot(df, aes(x=col, y=row, fill=score)) + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + scale_fill_gradient2(low = "red", mid = "white", high = "#132B43", midpoint=0) + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=1, intercept=0, color="black", linetype="solid")
+ggplot(df, aes(x=col, y=row, fill=score)) + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=1, intercept=0, color="black", linetype="solid")
+ggplot(df, aes(x=col, y=row, fill=score)) + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=1, intercept=500, color="black", linetype="solid")
+ggplot(df, aes(x=col, y=row, fill=score)) + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=-1, intercept=500, color="black", linetype="solid")
+ggplot(df, aes(x=col, y=row, fill=score)) + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=-1, intercept=0, color="black", linetype="solid")
+ggplot(df, aes(x=col, y=row, fill=score)) + geom_tile() + scale_fill_gradient2(low = "red", mid = "white", high = "#132B43", midpoint=0)  + theme_bw() + ggtitle("Title Here") + scale_x_continuous("Column") + scale_y_reverse("Row") + coord_cartesian(xlim=c(0,ncol(scoresMtx)),ylim=c(0,nrow(scoresMtx))) + geom_abline(slope=-1, intercept=0, color="black", linetype="solid")
+sessionInfo()
+library(gridExtra)
+update.packages("gridExtra")
+update.packages()
+library(gridExtra)

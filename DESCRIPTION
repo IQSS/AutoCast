@@ -1,10 +1,13 @@
 Package: AutoCast
-Version: 0.2
-Date: 2014-09-01
+Version: 1.0
+Date: 2015-08-01
 Title: Automated Bayesian Forecasting with YourCast
-Author: Konstantin Kashin <kkashin@fas.harvard.edu>, Jon Bischof <jbischof@fas.harvard.edu>
-Maintainer: Konstantin Kashin <kkashin@fas.harvard.edu>
-Depends: R (>= 1.9.0), YourCast, rgenoud
+Author: Konstantin Kashin <kvkashin@gmail.com>
+         Gary King <king@harvard.edu>
+	 Samir Soneji <ssoneji@princeton.edu>
+Maintainer: Konstantin Kashin <kvkashin@gmail.com>
+Depends: R (>= 3.0.2), YourCast, ggplot2
+Imports: grid, gridExtra, reshape2, abind, shiny, scales
 Description: Generates Yourcasts under range of prior specifications, ranking forecasts by user preferences for smoothness and out-of-sample fit.
-License: GPL >=2
-URL: http://gking.harvard.edu
+License: Creative Commons Attribution-NonCommercial 3.0 License 
+Copyright: (C) 2015. Konstantin Kashin, Gary King, and Samir Soneji.

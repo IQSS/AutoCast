@@ -1,20 +1,8 @@
-export(
-       # Functions to be called by users
-       autocast,plot.autocast,
-       run.opt,optim.autocast,plot.diag)
+import(shiny, scales, grid, gridExtra, ggplot2, reshape2, YourCast, abind)
 
-      # # Functions left here for debugging purposes
-      # new.lapply, rss,
-      # movement.over.time, movement.over.age,
-      # pred.extract,
-      # quantile.condor.run, condor.run,
-      # extract.test.fun, quantile.yourcast,
-      # parse.quantile, parse.auto,
-      # createvalidobj, diags.valid, condor.load,
-      # optim.fn)
+export(gridcast, weightcast, forecast)
 
-S3method(plot, autocast)
-S3method(print, autocast)
-S3method(summary, autocast)
-S3method(print, optim.autocast)
-S3method(summary, optim.autocast)
+S3method(print, gridcast)
+S3method(print, weightcast)
+S3method(print, forecast)
+S3method(plot, forecast)
