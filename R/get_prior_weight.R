@@ -1,4 +1,4 @@
-get.prior.weight <- function(w, n) {
+get_prior_weight <- function(w, n) {
     if (is.null(w)) {
         return(rep(1, n))
     } else if (length(w) == 1) {

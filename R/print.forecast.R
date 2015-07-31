@@ -1,3 +1,4 @@
+#' @export
 print.forecast <- function(x, ...) {
     cat(paste("AutoCast forecast\n\n"))
     cat("Model: ", x$aux$args.yourcast$model, "\n", sep = "")

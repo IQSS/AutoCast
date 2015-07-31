@@ -1,3 +1,4 @@
+#' @export
 print.gridcast <- function(x, ...) {
     cat(paste("GridCast object with", x$validation$N.runs, "total YourCast runs\n\n"))
     cat("Model: ", x$aux$args.yourcast$model, "\n", sep = "")

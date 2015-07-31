@@ -12,6 +12,7 @@
 #' @param print Character. Must be either "device" or "pdf". Default: "device".
 #' @param print.opts List.
 
+#' @export
 plot.forecast <- function(x, type = "agetime", title = NULL, subtitle = NULL, ageprofile.opts = list(), 
     timeprofile.opts = list(), print = "device", print.opts = list()) {
     # check for class
@@ -112,7 +113,7 @@ plot.forecast <- function(x, type = "agetime", title = NULL, subtitle = NULL, ag
     	if(!is.null(print.options$path)){filename <- file.path(print.options$path, print.options$filename)} else {filename <- print.options$filename}
         pdf(file = filename, height = print.options$height, width = print.options$width)
     }
-    do.call(grid.arrange, grid.args)
+    do.call(gridExtra::grid.arrange, grid.args)
     if (print == "device") {
     }
     if (print == "pdf") {

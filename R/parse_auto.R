@@ -1,4 +1,4 @@
-parse.auto <- function(prior.vec, run = 1, verb.parse = TRUE, ...) {
+parse_auto <- function(prior.vec, run = 1, verb.parse = TRUE, ...) {
     
     Ha.sigma <- prior.vec[1]
     Ht.sigma <- prior.vec[2]

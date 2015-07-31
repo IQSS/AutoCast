@@ -5,7 +5,7 @@
 \title{Weight selection for AutoCast}
 \usage{
 weightcast(x, out.file = NULL, out.object = NULL, center.diags = T,
-  scale.diags = T)
+  scale.diags = T, options = list())
 }
 \arguments{
 \item{x}{Object of class \code{"gridcast"} or a list of \code{"gridcast"} objects.}
@@ -17,7 +17,9 @@ weightcast(x, out.file = NULL, out.object = NULL, center.diags = T,
 \item{center.diags}{Logical. If \code{TRUE}, each of the four diagnostic variables is centered (de-meaned). Default: \code{TRUE}.}
 
 \item{scale.diags}{Logical. If \code{TRUE}, each of the four diagnostic variables is scaled after centering, if applicable (divided by standard deviation).
-  Default: \code{TRUE}.}
+Default: \code{TRUE}.}
+
+\item{options}{Options passed to \code{options} argument of \code{ShinyApp}.}
 }
 \value{
 \code{NULL}.

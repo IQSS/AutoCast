@@ -1,3 +1,4 @@
+#' @export
 print.weightcast <- function(x, ...) {
     cat(paste("WeightCast object with", length(x), "chosen weight(s):\n\n"))
     cat(paste(names(x), collapse = "\n"))

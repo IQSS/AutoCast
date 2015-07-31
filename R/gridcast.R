@@ -35,9 +35,7 @@
 #' @param print.runs Logical. If TRUE, will print notification for each run of yourcast.
 #' @param ... Additional arguments passed to \code{yourcast} function.
 
-#' @return \code{panelAR} returns an object of class \code{"gridcast"}.
-#' 
-#' An object of class \code{"gridcast"} contains the following components
+#' @return An object of class \code{"gridcast"} contains the following components
 #' \itemize{
 #'      \item \code{y} A matrix of observed data (age groups by time periods).
 #'      \item \code{aux} List. A list of inputs to \code{yourcast}.
@@ -45,6 +43,7 @@
 #'   }
 
 
+#' @export
 gridcast <- function(dataobj, Ha.sigma.seq = c(from = 0.01, to = 20, length.out = 5), Ha.list = NULL, 
     Ht.sigma.seq = c(from = 0.01, to = 20, length.out = 5), Ht.list = NULL, Hat.sigma.seq = NA, 
     Hat.list = NULL, logscale = TRUE, time.degree = 1, length.holdout = 5, holdout = NULL, 
@@ -182,7 +181,7 @@ gridcast <- function(dataobj, Ha.sigma.seq = c(from = 0.01, to = 20, length.out 
     
     yourcastRuns <- lapply(X = 1:N.runs, FUN = function(i) {
         sigmaRun <- as.numeric(sigma[i, ])
-        yourcastRun <- do.call("parse.auto", append(list(prior.vec = sigmaRun, run = i, verb.parse = print.runs, 
+        yourcastRun <- do.call("parse_auto", append(list(prior.vec = sigmaRun, run = i, verb.parse = print.runs, 
             dataobj = dataobjValid), args.yourcast))
         return(yourcastRun)
     })

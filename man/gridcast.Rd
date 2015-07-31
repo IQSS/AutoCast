@@ -52,8 +52,6 @@ if a vector of length A, the ath element is the weight of age group a. Default: 
 \item{...}{Additional arguments passed to \code{yourcast} function.}
 }
 \value{
-\code{panelAR} returns an object of class \code{"gridcast"}.
-
 An object of class \code{"gridcast"} contains the following components
 \itemize{
      \item \code{y} A matrix of observed data (age groups by time periods).

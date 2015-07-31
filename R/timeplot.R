@@ -32,7 +32,7 @@ timeplot <- function(d, uncertainty = TRUE, xlab = "Time", ylab = "Data and Fore
     # plot
     plot.timeprofile <- ggplot(d.forecast, aes_string(x = 'time', y = 'yhat', color = 'age', group = 'age')) + 
         geom_line() + theme_bw() + scale_x_continuous(xlab) + scale_y_continuous(ylab) + scale_color_gradientn("Age", 
-        colours = rainbow(7)) + theme(legend.margin = unit(-0.02, "npc"), legend.text = element_text(size = 8))
+        colours = rainbow(7)) + theme(legend.margin = grid::unit(-0.02, "npc"), legend.text = element_text(size = 8))
     if (uncertainty) {
         plot.timeprofile <- plot.timeprofile + geom_ribbon(data = d.forecast, aes_string(x = 'time', 
             y = NULL, ymin = 'yhat.lower', ymax = 'yhat.upper', fill = 'age'), alpha = 0.15, color = NA) + 

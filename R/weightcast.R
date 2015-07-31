@@ -14,13 +14,17 @@
 #' @param center.diags Logical. If \code{TRUE}, each of the four diagnostic variables is centered (de-meaned). Default: \code{TRUE}.
 #' @param scale.diags Logical. If \code{TRUE}, each of the four diagnostic variables is scaled after centering, if applicable (divided by standard deviation).
 #'   Default: \code{TRUE}.
+#' @param options Options passed to \code{options} argument of \code{ShinyApp}.
 #'
 #' @return \code{NULL}.
 
-weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, scale.diags = T) {
+#' @export
+weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, scale.diags = T, options=list()) {
     # set up selectedWeights object that will hold selected weights
     selectedWeightsTemplate <- list()
     class(selectedWeightsTemplate) <- "weightcast"
+    # get parent frame
+    env <- parent.frame()
     
     # stop if x is NULL
     if(is.null(x)){
@@ -144,8 +148,8 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
                 multiple = TRUE, options = list(create = FALSE), selected = startTimes))), 
         fluidRow(column(6, align = "center", tags$div(id = "timeplot", style = "width: 100%; margin: 0 auto")), 
             column(6, align = "center", tags$div(id = "ageplot", style = "width: 100%; margin: 0 auto"))), 
-        hr(), fluidRow(column(12, align = "left", tags$p("&#9400 2014 Konstantin Kashin and Gary King. Software licensed under ", 
-            tags$a(href = "http://creativecommons.org/licenses/by-nc/3.0/", "Creative Commons Attribution-NonCommercial 3.0 License"), 
+        hr(), fluidRow(column(12, align = "left", tags$p("\u00A9 2015 Konstantin Kashin, Gary King, and Samir Soneji. This work is licensed under a", 
+            tags$a(href = "http://creativecommons.org/licenses/by-nc-sa/4.0/", "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"), 
             ".")))), server = function(input, output, session) {
         selectedWeights <- selectedWeightsTemplate
         rvalues <- reactiveValues(priorWeight = NULL)
@@ -345,7 +349,6 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
                 return()
             }
             w <- isolate(getOptim()$weights)
-            ### assign to variable in parent environment
             selectedWeights[[paste(round(w, 1), collapse = "-")]] <<- w
             
             updateSelectInput(session, "selectedWeights", choices = names(selectedWeights), 
@@ -363,7 +366,6 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
             }
             # round to nearest tenth
             w <- paste(round(isolate(getOptim()$weights), 1), collapse = "-")
-            ### assign to variable in parent environment
             selectedWeights[[w]] <<- NULL
             
             updateSelectInput(session, "selectedWeights", choices = names(selectedWeights), 
@@ -411,8 +413,8 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
                 return()
             }
             isolate({
-                assign(out.object, selectedWeights, envir = parent.frame())
-                message("Assigned weights to ", out.object, " to parent frame / environment.")
+                assign(out.object, selectedWeights, envir = env)
+                message("Assigned weights to ", out.object, " to ", environmentName(env),  " environment.")
             })
         })
         
@@ -524,8 +526,8 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
             })  # end of isolate 
             
             
-            ageScale <- gradient_n_pal(colours = rainbow(7), values = ages)
-            timeScale <- gradient_n_pal(colours = rainbow(7), values = times)
+            ageScale <- scales::gradient_n_pal(colours = rainbow(7), values = ages)
+            timeScale <- scales::gradient_n_pal(colours = rainbow(7), values = times)
             
             if (!is.null(input$selectedWeights)) 
                 { 
@@ -615,5 +617,5 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
         })  # end of observe for age and time profiles
         
         
-    })
+    }, options=options)
 } 

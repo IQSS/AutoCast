@@ -6,36 +6,36 @@ calcDiags <- function(y, aux, validation) {
     time.degree <- validation$time.degree
     
     # RMSE weights
-    rmse.time.weights <- get.prior.weight(aux$rmse.age.weight, length(holdout.years))
-    rmse.age.weights <- get.prior.weight(aux$rmse.age.weight, length(ages))
+    rmse.time.weights <- get_prior_weight(aux$rmse.age.weight, length(holdout.years))
+    rmse.age.weights <- get_prior_weight(aux$rmse.age.weight, length(ages))
     
     # Ha weights
-    Ha.age.weights <- get.prior.weight(aux$args.yourcast$Ha.age.weight, length(ages))
-    Ha.time.weights <- get.prior.weight(aux$args.yourcast$Ha.time.weight, length(times))
+    Ha.age.weights <- get_prior_weight(aux$args.yourcast$Ha.age.weight, length(ages))
+    Ha.time.weights <- get_prior_weight(aux$args.yourcast$Ha.time.weight, length(times))
     Ha.age.fd.weights <- (Ha.age.weights[-1] + Ha.age.weights[-length(Ha.age.weights)])/2
     
     # Ht weights
-    Ht.age.weights <- get.prior.weight(aux$args.yourcast$Ht.age.weight, length(ages))
-    Ht.time.weights <- get.prior.weight(aux$args.yourcast$Ht.time.weight, length(times))
+    Ht.age.weights <- get_prior_weight(aux$args.yourcast$Ht.age.weight, length(ages))
+    Ht.time.weights <- get_prior_weight(aux$args.yourcast$Ht.time.weight, length(times))
     Ht.time.fd.weights <- (Ht.time.weights[-1] + Ht.time.weights[-length(Ht.time.weights)])/2
     
     # Hat weights
-    Hat.age.weights <- get.prior.weight(aux$args.yourcast$Hat.age.weight, length(ages))
-    Hat.time.weights <- get.prior.weight(aux$args.yourcast$Hat.time.weight, length(times))
+    Hat.age.weights <- get_prior_weight(aux$args.yourcast$Hat.age.weight, length(ages))
+    Hat.time.weights <- get_prior_weight(aux$args.yourcast$Hat.time.weight, length(times))
     Hat.age.fd.weights <- (Hat.age.weights[-1] + Hat.age.weights[-length(Hat.age.weights)])/2
     Hat.time.fd.weights <- (Hat.time.weights[-1] + Hat.time.weights[-length(Hat.time.weights)])/2
     
     # RMSE
     rmse <- sqrt(sapply(pred, function(p) {
         e.sq <- (p[, holdout.years] - y[, holdout.years])^2
-        e.sq.time <- apply(e.sq, MARGIN = 1, function(x) weighted.mean(x, rmse.time.weights))
+        e.sq.time <- apply(e.sq, MARGIN = 1, function(x) weighted.mean(x, rmse.time.weights, na.rm=T))
         return(weighted.mean(e.sq.time, rmse.age.weights))
     }))
     
     ### AGE
     
     # average observed age profile
-    y.mean <- rowMeans(y)
+    y.mean <- rowMeans(y, na.rm=T)
     # now get smoothed observed age profile
     spline.out <- fitted(smooth.spline(x = as.numeric(ages), y = y.mean))
     smoothed.age <- data.frame(age = as.numeric(ages), smoothed.y = spline.out, mean = y.mean)

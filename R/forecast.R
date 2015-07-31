@@ -25,6 +25,7 @@
 #'      \item \code{weights} The \code{"weightcast"} object provided as an input to \code{forecast}.
 #'   }
 
+#' @export
 forecast <- function(obj, weights, point.estimate = median, lower.bound = min, upper.bound = max) {
     if (class(obj) != "gridcast") {
         stop("'obj' must be a 'gridcast' or 'groupcast' object.")
