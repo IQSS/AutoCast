@@ -9,7 +9,7 @@ Authors@R: as.person(c(
     "Samir Soneji <samir.soneji@dartmouth.edu> [aut]"
   ))
 Depends: R (>= 3.0.2), YourCast
-Imports: abind, grid, gridExtra, ggplot2, reshape2, scales, shiny
+Imports: abind, grid, ggplot2, reshape2, scales, shiny
 License: file LICENSE
 Suggests: knitr
 VignetteBuilder: knitr
