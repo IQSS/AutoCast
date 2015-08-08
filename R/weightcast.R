@@ -465,14 +465,14 @@ weightcast <- function(x, out.file = NULL, out.object = NULL, center.diags = T, 
         ##### PLOT time profile #####
         output$timePlot <- renderPlot({
             dat <- getOptim()
-            print(timeplot(d = dat$a, uncertainty = F, holdout.times = dat$holdout.times, 
+            print(timeplot.default(dat$a, holdout.times = dat$holdout.times, 
                 insample.forecast = T))
         })
         
         ##### PLOT age profile #####
         output$agePlot <- renderPlot({
             dat <- getOptim()
-            print(ageplot(d = dat$a, uncertainty = F))
+            print(ageplot.default(dat$a))
         })
         
         ##### PLOT histograms of diagnostics #####

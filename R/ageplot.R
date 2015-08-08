@@ -30,9 +30,10 @@ ageplot.forecast <- function(object, xlab = "Age", ylab = "Data and Forecasts", 
 }
 
 
+#variables = list()
 #' @export
-ageplot.default <- function(object, uncertainty = FALSE, xlab = "Age", ylab = "Data and Forecasts", holdout.times = NULL, 
-    insample.obs = FALSE, insample.forecast = TRUE, ...) {
+ageplot.default <- function(object, xlab = "Age", ylab = "Data and Forecasts", holdout.times = NULL, 
+    insample.obs = FALSE, insample.forecast = TRUE, uncertainty = FALSE, ...) {
     print("calling ageplot.default")	
     
     if(!is.data.frame(object)){
@@ -91,3 +92,6 @@ ageplot.default <- function(object, uncertainty = FALSE, xlab = "Age", ylab = "D
     
     return(plot.ageprofile)
 } 
+
+
+### create variables = list() option

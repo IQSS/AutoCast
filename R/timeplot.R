@@ -15,7 +15,7 @@ timeplot <- function(object, ...) {
 }
 
 #' @export
-timeplot.forecast <- function(object, xlab="Age", ylab = "Data and Forecasts", insample.obs = FALSE, insample.forecast = TRUE, 
+timeplot.forecast <- function(object, xlab="Time", ylab = "Data and Forecasts", insample.obs = FALSE, insample.forecast = TRUE, 
         uncertainty = FALSE, ...){
       print("calling timeplot.forecast")
       if (!inherits(object, "forecast"))  stop("use only with \"lm\" objects")
