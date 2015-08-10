@@ -34,15 +34,23 @@
 #'   if a vector of length A, the ath element is the weight of age group a. Default: \code{0}. 
 #' @param print.runs Logical. If TRUE, will print notification for each run of yourcast.
 #' @param ... Additional arguments passed to \code{yourcast} function.
-
+#'
 #' @return An object of class \code{"gridcast"} contains the following components
 #' \itemize{
 #'      \item \code{y} A matrix of observed data (age groups by time periods).
 #'      \item \code{aux} List. A list of inputs to \code{yourcast}.
 #'      \item \code{validation} List. A list containing all sigma combinations, the forecasts, and the associated diagnostics.
 #'   }
-
-
+#'
+#' @examples
+#' data(netherlands)
+#' ff <- log(brst3/popu3) ~ log(hc) + log(gdp) + log(tobacco3) + log(fat) + time
+#' gridcast(netherlands_data, formula=ff, model="map", 
+#'                 sample.frame=c(1950,2000,2001,2030), verbose=FALSE)
+#' 
+#' gridcast(netherlands_data, formula=ff, model="map", 
+#'                 sample.frame=c(1950,2000,2001,2030), verbose=FALSE, 
+#'                 Ht.sigma.seq=c(from=0.01, to=100, length.out=5))
 #' @export
 gridcast <- function(dataobj, Ha.sigma.seq = c(from = 0.01, to = 20, length.out = 5), Ha.list = NULL, 
     Ht.sigma.seq = c(from = 0.01, to = 20, length.out = 5), Ht.list = NULL, Hat.sigma.seq = NA, 

@@ -16,6 +16,16 @@
 #'   Default: \code{TRUE}.
 #' @param options Options passed to \code{options} argument of \code{ShinyApp}.
 #'
+#' @examples
+#' \dontrun{
+#' data(netherlands)
+#' ff <- log(brst3/popu3) ~ log(hc) + log(gdp) + log(tobacco3) + log(fat) + time
+#' out <- gridcast(netherlands_data, formula=ff, model="map", 
+#'                            sample.frame=c(1950,2000,2001,2030), verbose=FALSE)
+#' weightcast(out)
+#' 
+#' weightcast(out, options=list(port=8888, launch.browser = F))
+#' }
 #' @return \code{NULL}.
 
 #' @export

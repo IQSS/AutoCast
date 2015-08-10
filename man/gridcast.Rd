@@ -62,4 +62,14 @@ An object of class \code{"gridcast"} contains the following components
 \description{
 \code{gridcast} generates YourCast forecasts for a range of prior specifications and outputs diagnostics across the different specifications.
 }
+\examples{
+data(netherlands)
+ff <- log(brst3/popu3) ~ log(hc) + log(gdp) + log(tobacco3) + log(fat) + time
+gridcast(netherlands_data, formula=ff, model="map",
+                sample.frame=c(1950,2000,2001,2030), verbose=FALSE)
+
+gridcast(netherlands_data, formula=ff, model="map",
+                sample.frame=c(1950,2000,2001,2030), verbose=FALSE,
+                Ht.sigma.seq=c(from=0.01, to=100, length.out=5))
+}
 

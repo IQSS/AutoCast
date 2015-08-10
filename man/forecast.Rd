@@ -33,4 +33,14 @@ forecast(obj, weights, point.estimate = median, lower.bound = min,
 \description{
 \code{forecast} runs final YourCast forecasts given a \code{"gridcast"} object and a \code{"weightcast"} object as inputs.
 }
+\examples{
+data(netherlands)
+ff <- log(brst3/popu3) ~ log(hc) + log(gdp) + log(tobacco3) + log(fat) + time
+out <- gridcast(netherlands_data, formula=ff, model="map",
+                           sample.frame=c(1950,2000,2001,2030), verbose=FALSE)
+netherlands_forecast <- forecast(out, netherlands_weights)
+
+ageplot(netherlands_forecast)
+timeplot(netherlands_forecast)
+}
 

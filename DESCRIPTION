@@ -11,5 +11,3 @@ Authors@R: as.person(c(
 Depends: R (>= 3.0.2), YourCast
 Imports: abind, grid, ggplot2, reshape2, scales, shiny
 License: file LICENSE
-Suggests: knitr
-VignetteBuilder: knitr

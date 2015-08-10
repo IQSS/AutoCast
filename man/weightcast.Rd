@@ -27,4 +27,15 @@ Default: \code{TRUE}.}
 \description{
 \code{weightcast} launches an interactive, Shiny-based application that allows the user to select multiple weight combinations that fit her preference for fit versus smoothness of the forecasts.
 }
+\examples{
+\dontrun{
+data(netherlands)
+ff <- log(brst3/popu3) ~ log(hc) + log(gdp) + log(tobacco3) + log(fat) + time
+out <- gridcast(netherlands_data, formula=ff, model="map",
+                           sample.frame=c(1950,2000,2001,2030), verbose=FALSE)
+weightcast(out)
+
+weightcast(out, options=list(port=8888, launch.browser = F))
+}
+}
 
